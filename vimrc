@@ -18,17 +18,19 @@ if has("win32")
 	" cas de windows
 	set rtp+=~/vimfiles/bundle/Vundle.vim/
 	let path='~/vimfiles/bundle'
+call vundle#begin(path)
 elseif has("unix")
 	" cas linux
+	echo "OK linux"
 	set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 endif
-call vundle#begin(path)
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmaril/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate.git'
 Plugin 'ervandew/supertab.git'
