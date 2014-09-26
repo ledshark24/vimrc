@@ -4,6 +4,8 @@ if has("win32")
 	source $VIMRUNTIME/mswin.vim
 	set shellslash
 	behave mswin
+elseif("unix")
+	runtime! debian.vim
 endif
 	
 "Vundle : gestion des plug-ins-------------------------------------------------------
@@ -26,7 +28,7 @@ call vundle#begin(path)
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmaril/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate.git'
 Plugin 'ervandew/supertab.git'
@@ -38,7 +40,9 @@ Plugin 'TaskList.vim'
 "Plugin 'bsl/obviousmode' " show which mode you are in with colors
 Plugin 'kien/rainbow_parentheses.vim' " color-match ()[]{}<> and friends
 Plugin 'mattn/emmet-vim' " implementation (expand tags shortcuts) html 'zen'
-
+Plugin 'scrooloose/nerdtree'
+Plugin 'roblillack/vim-bufferlist'
+Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -95,16 +99,31 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-
+"Backup ------------------------------------------------------------------------------------------
 set backup " backup on
-if has("win32")
-	" cas windows
+
+set history=100	" un historique raisonnable
+set undolevels=150
+
+" Suffixes à cacher
+set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo
+
+if filewritable(expand("~/.vim/backup")) == 2
+    " comme le répertoire est accessible en écriture,
+    " on va l'utiliser.
+	set backupdir=$HOME/.vim/backup
+elseif has("unix") || has("win32unix")
+	" C'est c'est un système compatible UNIX, on
+	" va créer le répertoire et l'utiliser.
+	call system("mkdir $HOME/.vim/backup -p")
+	set backupdir=$HOME/.vim/backup
+elseif has("win32")
+	" cas windows sans la structure qvb
 	set backupdir=.,c:\tmp,c:\temp
 	set directory=.,c:\tmp,c:\temp
-elseif has("unix")
-	"cas linux
-	"TODO
 endif
+
+set autoread	"relecture automatique quand un fichier est changé par ailleurs
 
 set scrolloff=3
 set autoindent
@@ -144,20 +163,14 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 " affichage des caractères invisibles
-set list
-set listchars=tab:>\ ,eol:¬
-
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+set list!	"afficher les caractères invisibles
+if has("win32")
+	" cas non favorable
+	set listchars=tab:>\ ,eol:
+else¬
+	set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
+endif
 
 nnoremap ; :
 
-nnoremap <leader>ft Vatzf
-
 nnoremap <leader>w <C-w>v<C-w>l
-
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
