@@ -7,7 +7,7 @@ générique pour tous mes postes. Et oui vous y trouverez mon virmc.
 plugins :
 ---------
 
- [Vundle](https://github.com/gmarik/Vundle.vim), ajouté en sous module
+* [Vundle](https://github.com/gmarik/Vundle.vim), ajouté en sous module
   du dépôt, n'oubliez pas de faire un :PluginIstall au premier lancement de
   vim.
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
