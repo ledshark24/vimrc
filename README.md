@@ -8,7 +8,7 @@ plugins :
 ---------
 
 * [Vundle](https://github.com/gmarik/Vundle.vim), ajouté en sous module
-  du dépôt, n'oubliez pas de faire un :PluginIstall au premier lancement de
+  du dépôt, n'oubliez pas de faire un :PluginInstall au premier lancement de
   vim.
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
 * [supertab](https://github.com/ervandew/supertab.git)
