@@ -19,3 +19,6 @@ plugins :
 * [TaskList](https://github.com/vim-scripts/TaskList.vim)
 * [rainbow\_parentheses](https://github.com/kien/rainbow_parentheses.vim) 
 * [emmet-vim](https://github.com/mattn/emmet-vim) 
+* [nerdtree](https://github.com/scrooloose/nerdtree)
+* [vim-bufferlist](https://github/roblillack/vim-bufferlist)
+* [syntastic](https://github/scrooloose/syntastic)
