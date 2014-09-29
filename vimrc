@@ -166,12 +166,7 @@ set colorcolumn=85
 
 " affichage des caractères invisibles
 set list!	"afficher les caractères invisibles
-if has("win32")
-	" cas non favorable
-	set listchars=tab:>\ ,eol:
-else¬
-	set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
-endif
+set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
 
 nnoremap ; :
 
