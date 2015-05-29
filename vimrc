@@ -121,8 +121,8 @@ elseif has("unix") || has("win32unix")
 	set backupdir=$HOME/.vim/backup
 elseif has("win32")
 	" cas windows sans la structure qvb
-	set backupdir=.,c:\tmp,c:\temp
-	set directory=.,c:\tmp,c:\temp
+	set backupdir=c:\tmp,c:\temp,~\AppData\Local\Temp
+	set directory=c:\tmp,c:\temp,~\AppData\Local\Temp
 endif
 
 set autoread	"relecture automatique quand un fichier est changé par ailleurs
