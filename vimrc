@@ -51,7 +51,9 @@ filetype plugin indent on    " required
 " Plugins  -------------------------------------------------------------------------
 "  Tagbar
 nmap <F8> :TagbarToggle<CR>
-
+if has("win32")
+	let g:tagbar_ctags_bin = 'C:\Program Files (x86)\ctags58\ctags.exe'
+endif
 
 
 "Couleurs & polices ----------------------------------------------------------------
