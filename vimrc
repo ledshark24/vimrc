@@ -108,7 +108,7 @@ set history=100	" un historique raisonnable
 set undolevels=150
 
 " Suffixes à cacher
-set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo
+set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo,*~
 
 if filewritable(expand("~/.vim/backup")) == 2
     " comme le répertoire est accessible en écriture,
