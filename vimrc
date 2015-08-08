@@ -21,7 +21,6 @@ if has("win32")
 call vundle#begin(path)
 elseif has("unix")
 	" cas linux
-	echo "OK linux"
 	set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 endif
