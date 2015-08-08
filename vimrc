@@ -169,10 +169,24 @@ set list!	"afficher les caractères invisibles
 if has("win32")
 	" cas non favorable
 	set listchars=tab:>\ ,eol:
-else¬
+else
 	set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
 endif
 
 nnoremap ; :
 
 nnoremap <leader>w <C-w>v<C-w>l
+
+" emmet settings:
+let g:user_emmet_settings = {
+ \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  },
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'haml' : {
+  \    'extends' : 'html',
+  \  },
+  \}
