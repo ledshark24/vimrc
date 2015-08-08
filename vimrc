@@ -51,7 +51,9 @@ filetype plugin indent on    " required
 " Plugins  -------------------------------------------------------------------------
 "  Tagbar
 nmap <F8> :TagbarToggle<CR>
-
+if has("win32")
+	let g:tagbar_ctags_bin = 'C:\Program Files (x86)\ctags58\ctags.exe'
+endif
 
 
 "Couleurs & polices ----------------------------------------------------------------
@@ -108,7 +110,7 @@ set history=100	" un historique raisonnable
 set undolevels=150
 
 " Suffixes à cacher
-set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo
+set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo,*~
 
 if filewritable(expand("~/.vim/backup")) == 2
     " comme le répertoire est accessible en écriture,
@@ -121,8 +123,8 @@ elseif has("unix") || has("win32unix")
 	set backupdir=$HOME/.vim/backup
 elseif has("win32")
 	" cas windows sans la structure qvb
-	set backupdir=.,c:\tmp,c:\temp
-	set directory=.,c:\tmp,c:\temp
+	set backupdir=c:\tmp,c:\temp,~\AppData\Local\Temp
+	set directory=c:\tmp,c:\temp,~\AppData\Local\Temp
 endif
 
 set autoread	"relecture automatique quand un fichier est changé par ailleurs
