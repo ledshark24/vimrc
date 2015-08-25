@@ -7,7 +7,7 @@ if has("win32")
 elseif("unix")
 	runtime! debian.vim
 endif
-	
+
 "Vundle : gestion des plug-ins-------------------------------------------------------
 
 set nocompatible              " be iMproved, required
@@ -30,7 +30,8 @@ endif
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate.git'
 Plugin 'ervandew/supertab.git'
@@ -45,6 +46,9 @@ Plugin 'mattn/emmet-vim' " implementation (expand tags shortcuts) html 'zen'
 Plugin 'scrooloose/nerdtree'
 Plugin 'roblillack/vim-bufferlist'
 Plugin 'scrooloose/syntastic'
+Plugin 'chrisbra/csv.vim'
+Plugin 'bling/vim-airline'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -64,7 +68,7 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=Consolas:h11:cANSI
+	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSI "https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
 elseif has("unix")
 	" cas linux
 	" TODO
@@ -173,3 +177,9 @@ set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
 nnoremap ; :
 
 nnoremap <leader>w <C-w>v<C-w>l
+
+" gestion de la souris
+set mouse=a
+
+" Airline
+let g:airline_powerline_fonts = 1

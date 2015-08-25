@@ -7,7 +7,7 @@ générique pour tous mes postes. Et oui vous y trouverez mon virmc.
 plugins :
 ---------
 
-* [Vundle](https://github.com/gmarik/Vundle.vim), ajouté en sous module
+* [Vundle](https://github.com/VundleVim/Vundle.vim), ajouté en sous module
   du dépôt, n'oubliez pas de faire un :PluginInstall au premier lancement de
   vim.
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
@@ -22,3 +22,5 @@ plugins :
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [vim-bufferlist](https://github/roblillack/vim-bufferlist)
 * [syntastic](https://github/scrooloose/syntastic)
+* [airline](https://github.com/bling/vim-airline)
+* [csv.vim](https://github.com/chrisbra/csv.vim)
