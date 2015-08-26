@@ -69,14 +69,13 @@ if has("win32")
 	" cas windows
 	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSI "https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
 elseif has("unix")
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 	" cas linux
-	" TODO
 endif
 
 set encoding=utf-8
 
 " spellchek  -----------------------------------------------------------------------
-
 
 let mapleader = ","
 
@@ -148,7 +147,6 @@ set laststatus=2
 
 set number
 set undofile
-
 
 nnoremap / /\v
 vnoremap / /\v
