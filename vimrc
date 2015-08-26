@@ -21,7 +21,6 @@ if has("win32")
 call vundle#begin(path)
 elseif has("unix")
 	" cas linux
-	echo "OK linux"
 	set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 endif
@@ -172,11 +171,30 @@ set colorcolumn=85
 
 " affichage des caractères invisibles
 set list!	"afficher les caractères invisibles
-set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
+if has("win32")
+	" cas non favorable
+	set listchars=tab:>\ ,eol:
+else
+	set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
+endif
 
 nnoremap ; :
 
 nnoremap <leader>w <C-w>v<C-w>l
+
+" emmet settings:
+let g:user_emmet_settings = {
+ \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  },
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'haml' : {
+  \    'extends' : 'html',
+  \  },
+  \}
 
 " gestion de la souris
 set mouse=a
