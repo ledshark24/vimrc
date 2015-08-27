@@ -196,3 +196,7 @@ set mouse=a
 " Airline
 let g:airline_powerline_fonts = 1
 let g:webdevicons_enable = 1
+
+" gestion du dossier
+nnoremap <leader>cd :cd%:p:h<CR>
+map <C-n> :NERDTreeToggle<CR>
