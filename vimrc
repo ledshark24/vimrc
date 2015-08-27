@@ -47,6 +47,7 @@ Plugin 'roblillack/vim-bufferlist'
 Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim'
 Plugin 'bling/vim-airline'
+Plugin 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -67,10 +68,10 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=DejaVu_Sans_Mono_for_Powerline:h8:cANSI "https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
+	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI " https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono
 elseif has("unix")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 	" cas linux
+	set guifont=Ubuntu\ Mono\ PNFT\ Mono\ Plus\ Font h10 " https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono
 endif
 
 set encoding=utf-8
@@ -169,7 +170,7 @@ set colorcolumn=85
 
 " affichage des caractères invisibles
 set list!	"afficher les caractères invisibles
-set listchars=tab:▸\ ,eol:¬	" quels caractères afficher
+set listchars=tab:›\ ,eol:¬,trail:∙	" quels caractères afficher
 
 nnoremap ; :
 
@@ -194,3 +195,4 @@ set mouse=a
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:webdevicons_enable = 1

@@ -24,3 +24,4 @@ plugins :
 * [syntastic](https://github/scrooloose/syntastic)
 * [airline](https://github.com/bling/vim-airline)
 * [csv.vim](https://github.com/chrisbra/csv.vim)
+* [vim-devicons](https://github.com/ryanoasis/vim-devicons)
