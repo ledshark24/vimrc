@@ -49,7 +49,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
+Plugin 'ryanoasis/vim-devicons' " -- à conserver à la fin
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -161,7 +161,9 @@ set incsearch
 set showmatch
 set hlsearch
 
+"supprimer l'highlighting quand la recherche est finie
 nnoremap <leader><space> :noh<cr>
+
 nnoremap <tab> %
 vnoremap <tab> %
 
@@ -198,6 +200,7 @@ set mouse=a
 " Airline
 let g:airline_powerline_fonts = 1
 let g:webdevicons_enable = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " gestion du dossier
 nnoremap <leader>cd :cd%:p:h<CR>

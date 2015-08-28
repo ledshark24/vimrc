@@ -1,10 +1,16 @@
-vimrc
+Vimrc
 =====
 
 En cours d'élaboration, ceci a pour ambition d'être un .vim ou un vimfiles
 générique pour tous mes postes. Et oui vous y trouverez mon virmc.
 
-plugins :
+Prérequis:
+----------
+installation des plugins : [Git](http://git-scm.com/)
+Police utilisée : [UbuntuMono for powerline](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono)
+[Exuberant ctags 5.5](http://ctags.sourceforge.net/)
+
+Plugins :
 ---------
 
 * [Vundle](https://github.com/VundleVim/Vundle.vim), ajouté en sous module
