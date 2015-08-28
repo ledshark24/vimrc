@@ -6,9 +6,9 @@ générique pour tous mes postes. Et oui vous y trouverez mon virmc.
 
 Prérequis:
 ----------
-installation des plugins : [Git](http://git-scm.com/)
-Police utilisée : [UbuntuMono for powerline](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono)
-[Exuberant ctags 5.5](http://ctags.sourceforge.net/)
+* installation des plugins : [Git](http://git-scm.com/)
+* Police utilisée : [UbuntuMono for powerline](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono)
+* [Exuberant ctags 5.5](http://ctags.sourceforge.net/)
 
 Plugins :
 ---------
