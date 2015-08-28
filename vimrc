@@ -47,6 +47,8 @@ Plugin 'roblillack/vim-bufferlist'
 Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ryanoasis/vim-devicons' " https://github.com/ryanoasis/vim-devicons
 
 call vundle#end()            " required
