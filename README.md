@@ -34,9 +34,9 @@ Plugins :
 * [emmet-vim](https://github.com/mattn/emmet-vim) implémentation vim de
   [emmet](http://emmet.io/)
 * [nerdtree](https://github.com/scrooloose/nerdtree) naviguer dans vos fichiers
-* [vim-bufferlist](https://github/roblillack/vim-bufferlist) liste de vos
+* [vim-bufferlist](https://github.com/roblillack/vim-bufferlist) liste de vos
   buffers
-* [syntastic](https://github/scrooloose/syntastic) aide à la syntaxe de vos
+* [syntastic](https://github.com/scrooloose/syntastic) aide à la syntaxe de vos
   fichiers
 * [airline](https://github.com/bling/vim-airline) powerline en mieux & plus
   simple
@@ -44,5 +44,5 @@ Plugins :
   des tableurs csv
 * [vim-devicons](https://github.com/ryanoasis/vim-devicons) plus de symboles !
 * [ctrlp](https://github.com/kien/ctrlp.vim) recherche par <C-p>
-* [vim-gitgutter](https://github/vim-gitgutter) signalétique du diff de git
+* [vim-gitgutter](https://github.com/vim-gitgutter) signalétique du diff de git
   dans la colonne des lignes
