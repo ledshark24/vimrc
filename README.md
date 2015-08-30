@@ -44,5 +44,5 @@ Plugins :
   des tableurs csv
 * [vim-devicons](https://github.com/ryanoasis/vim-devicons) plus de symboles !
 * [ctrlp](https://github.com/kien/ctrlp.vim) recherche par <C-p>
-* [vim-gitgutter](https://github.com/vim-gitgutter) signalétique du diff de git
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter) signalétique du diff de git
   dans la colonne des lignes
