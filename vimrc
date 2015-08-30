@@ -66,7 +66,7 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI 
+	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI
 elseif has("unix")
 	" cas linux
 	set guifont=Ubuntu\ Mono\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons\ 14

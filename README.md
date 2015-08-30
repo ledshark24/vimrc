@@ -12,7 +12,7 @@ Prérequis:
 
 Installation
 ------------
-git clone --recursive https://git.framasoft.org/ledshark24/vimrc.git ,git
+git clone --recursive https://git.framasoft.org/ledshark24/vimrc.git ,vim
 
 Plugins :
 ---------
