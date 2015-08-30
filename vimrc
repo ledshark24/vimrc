@@ -1,4 +1,4 @@
-"windows stupid stuff---------------------------------------------------------------
+" Gestion du cas (pénible) de windows
 if has("win32")
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
@@ -25,11 +25,8 @@ elseif has("unix")
 call vundle#begin()
 endif
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-" Plugin 'gmarik/Vundle.vim'
+" Vundle gère ses petits tout seul 
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate.git'
@@ -39,7 +36,6 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-sensible.git'
 Bundle "pangloss/vim-javascript"
 Plugin 'TaskList.vim'
-"Plugin 'bsl/obviousmode' " show which mode you are in with colors
 Plugin 'kien/rainbow_parentheses.vim' " color-match ()[]{}<> and friends
 Plugin 'mattn/emmet-vim' " implementation (expand tags shortcuts) html 'zen'
 Plugin 'scrooloose/nerdtree'
@@ -51,8 +47,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ryanoasis/vim-devicons' " -- à conserver à la fin
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()            " requis
+filetype plugin indent on    " requis
 
 " Plugins  -------------------------------------------------------------------------
 "  Tagbar
@@ -70,10 +66,10 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI " https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono
+	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI 
 elseif has("unix")
 	" cas linux
-	set guifont=Ubuntu\ Mono\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons
+	set guifont=Ubuntu\ Mono\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons\ 14
 endif
 
 set encoding=utf-8
@@ -85,10 +81,9 @@ let mapleader = ","
 set spell spelllang=fr
 set spellsuggest=double,10
 
-" Pressing ,ss will toggle and untoggle spell checking
+" Appuyer sur ss lancera la correction orthographique
 map <leader>ss :setlocal spell!<cr>
 
-" Shortcuts using <leader>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
