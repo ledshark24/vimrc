@@ -10,6 +10,10 @@ Prérequis:
 * Police utilisée : [UbuntuMono for powerline](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono)
 * [Exuberant ctags 5.5](http://ctags.sourceforge.net/)
 
+Installation
+------------
+git clone --recursive https://git.framasoft.org/ledshark24/vimrc.git ,git
+
 Plugins :
 ---------
 
