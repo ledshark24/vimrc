@@ -73,7 +73,7 @@ if has("win32")
 	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI " https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono
 elseif has("unix")
 	" cas linux
-	set guifont=Ubuntu\ Mono\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons
+	set guifont=Ubuntu\ Mono\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons\ 14
 endif
 
 set encoding=utf-8
