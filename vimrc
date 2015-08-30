@@ -26,7 +26,7 @@ call vundle#begin()
 endif
 
 
-" Vundle gère ses petits tout seul 
+" Vundle gère ses petits tout seul
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate.git'
@@ -122,7 +122,7 @@ elseif has("unix") || has("win32unix")
 	call system("mkdir $HOME/.vim/backup -p")
 	set backupdir=$HOME/.vim/backup
 elseif has("win32")
-	" cas windows sans la structure qvb
+	" cas windows sans la structure qui va bien
 	set backupdir=c:\tmp,c:\temp,~\AppData\Local\Temp
 	set directory=c:\tmp,c:\temp,~\AppData\Local\Temp
 endif
