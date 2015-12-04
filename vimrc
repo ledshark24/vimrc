@@ -165,7 +165,8 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
+highlight ColorColumn ctermbg=9
 
 " affichage des caractères invisibles
 set list!	"afficher les caractères invisibles
