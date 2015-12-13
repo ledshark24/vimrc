@@ -43,7 +43,7 @@ Plugin 'roblillack/vim-bufferlist'
 Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim'
 Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ryanoasis/vim-devicons' " -- à conserver à la fin
 
