@@ -70,7 +70,7 @@ if has("win32")
 	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI
 elseif has("unix")
 	" cas linux
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons 14
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons:14
 endif
 
 set encoding=utf-8
@@ -137,17 +137,19 @@ set autoindent								" Auto indentation active
 set showmode								" Afficher le mode en cours
 set showcmd									" Afficher la dernière commande 
 set hidden									" Fermer les bufers abandonnés
-set WildMenu								" Activer la complétion
+set wildmenu								" Activer la complétion
 set wildmode=list:longest					" Option de complétion
 set visualbell								" DU SILENCE, alerte visuelle uniquement
 set cursorline								" Afficher la ligne active
 set ttyfast									" Terminal rapide (lagacy)
 set ruler									" Afficher la position (lignes,colonne)
-set backspace=indent,eol,start
-set laststatus=2
+set backspace=indent,eol,start				
+set laststatus=2							" Toujours afficher la ligne de statut
 
 set number
 set undofile
+
+" Options de recherche" --------------------------------------------------------
 
 nnoremap / /\v
 vnoremap / /\v
@@ -161,6 +163,8 @@ set hlsearch
 
 "supprimer l'highlighting quand la recherche est finie
 nnoremap <leader><space> :noh<cr>
+
+"-------------------------------------------------------------------------------
 
 nnoremap <tab> %
 vnoremap <tab> %
