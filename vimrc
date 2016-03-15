@@ -1,17 +1,17 @@
 " Gestion du cas (pénible) de windows
 if has("win32")
-	source $VIMRUNTIME/vimrc_example.vim
-	source $VIMRUNTIME/mswin.vim
-	set shellslash
+	source $VIMRUNTIME/vimrc_example.vim	" vimrc par défaut
+	source $VIMRUNTIME/mswin.vim			" options pour ne pas égarer l'utilisateur
+	set shellslash							" compatibilité mswin pour espace dans les noms de fichier
 	behave mswin
 elseif("unix")
-	runtime! debian.vim
+	runtime! debian.vim						" vimrc par défaut
 endif
 
-"Vundle : gestion des plug-ins-------------------------------------------------------
+"Vundle : gestion des plug-ins--------------------------------------------------
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible							" be iMproved, required
+filetype off								 " required
 
 " set the runtime path to include Vundle and initialize
 if has("win32")
@@ -36,8 +36,8 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-sensible.git'
 Bundle "pangloss/vim-javascript"
 Plugin 'TaskList.vim'
-Plugin 'kien/rainbow_parentheses.vim' " color-match ()[]{}<> and friends
-Plugin 'mattn/emmet-vim' " implementation (expand tags shortcuts) html 'zen'
+Plugin 'kien/rainbow_parentheses.vim'		" color-match ()[]{}<> and friends
+Plugin 'mattn/emmet-vim'					" implementation (expand tags shortcuts) html 'zen'
 Plugin 'scrooloose/nerdtree'
 Plugin 'roblillack/vim-bufferlist'
 Plugin 'scrooloose/syntastic'
@@ -45,12 +45,12 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ryanoasis/vim-devicons' " -- à conserver à la fin
+Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
-call vundle#end()            " requis
-filetype plugin indent on    " requis
+call vundle#end()							" requis
+filetype plugin indent on					" requis
 
-" Plugins  -------------------------------------------------------------------------
+" Mpas  Plugins  ---------------------------------------------------------------
 "  Tagbar
 nmap <F8> :TagbarToggle<CR>
 if has("win32")
@@ -58,8 +58,9 @@ if has("win32")
 endif
 
 
-"Couleurs & polices ----------------------------------------------------------------
+"Couleurs & polices ------------------------------------------------------------
 " syntaxe toujours à on
+" TODO : uniformiser les polices
 syntax on
 set background=dark
 colorscheme desert
@@ -74,14 +75,16 @@ endif
 
 set encoding=utf-8
 
-" spellchek  -----------------------------------------------------------------------
+" leader est la virgule  -------------------------------------------------------
 
 let mapleader = ","
+
+" spellchek  -------------------------------------------------------------------
 
 set spell spelllang=fr
 set spellsuggest=double,10
 
-" Appuyer sur ss lancera la correction orthographique
+" Appuyer sur ,ss lancera la correction orthographique
 map <leader>ss :setlocal spell!<cr>
 
 map <leader>sn ]s
@@ -122,24 +125,24 @@ elseif has("unix") || has("win32unix")
 	call system("mkdir $HOME/.vim/backup -p")
 	set backupdir=$HOME/.vim/backup
 elseif has("win32")
-	" cas windows sans la structure qui va bien
+	" cas windows sans la structure qui va bien		TODO
 	set backupdir=c:\tmp,c:\temp,~\AppData\Local\Temp
 	set directory=c:\tmp,c:\temp,~\AppData\Local\Temp
 endif
 
-set autoread	"relecture automatique quand un fichier est changé par ailleurs
+set autoread								"relecture automatique quand un fichier est changé par ailleurs
 
-set scrolloff=3
-set autoindent
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest
-set visualbell
-set cursorline
-set ttyfast
-set ruler
+set scrolloff=5								" Toujours au moins 5 ligne au dessus du curseur
+set autoindent								" Auto indentation active
+set showmode								" Afficher le mode en cours
+set showcmd									" Afficher la dernière commande 
+set hidden									" Fermer les bufers abandonnés
+set WildMenu								" Activer la complétion
+set wildmode=list:longest					" Option de complétion
+set visualbell								" DU SILENCE, alerte visuelle uniquement
+set cursorline								" Afficher la ligne active
+set ttyfast									" Terminal rapide (lagacy)
+set ruler									" Afficher la position (lignes,colonne)
 set backspace=indent,eol,start
 set laststatus=2
 
@@ -198,6 +201,5 @@ let g:airline_powerline_fonts = 1
 let g:webdevicons_enable = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" gestion du dossier
 nnoremap <leader>cd :cd%:p:h<CR>
 map <C-n> :NERDTreeToggle<CR>

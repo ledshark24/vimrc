@@ -50,3 +50,26 @@ Plugins :
 * [ctrlp](https://github.com/kien/ctrlp.vim) recherche par <C-p>
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter) signalétique du diff de git
   dans la colonne des lignes
+
+Usage
+-----
+
+### Gestion des fichiers
+
+* `,cd` se rendre dans le dossier du fichier actif
+* `<Ctrl>-N` NerdTree
+
+### Recherche
+
+* `,<space>` pour neutraliser le signalement de la recherche
+
+### Correction orthographique
+
+* `,s?` suggestions
+* `,ss` Activation / désactivation de la Correction orthographique
+* `,sn`/`,sp` Suivant / Précédent
+* `,zg` Ajout au dictionnaire
+
+### gestion des fenêtres
+
+* `,w` : nouveau partage vertical
