@@ -1,7 +1,7 @@
 " Gestion du cas (pénible) de windows
 if has("win32")
 	source $VIMRUNTIME/vimrc_example.vim	" vimrc par défaut
-	source $VIMRUNTIME/mswin.vim			" options pour ne pas égarer l'utilisateur
+"	source $VIMRUNTIME/mswin.vim			" options pour ne pas égarer l'utilisateur
 	set shellslash							" compatibilité mswin pour espace dans les noms de fichier
 	behave mswin
 elseif("unix")
