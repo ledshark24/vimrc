@@ -116,8 +116,8 @@ set undolevels=150
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo,*~
 
 if filewritable(expand("~/.vim/backup")) == 2
-    " comme le répertoire est accessible en écriture,
-    " on va l'utiliser.
+	" comme le répertoire est accessible en écriture,
+	" on va l'utiliser.
 	set backupdir=$HOME/.vim/backup
 elseif has("unix") || has("win32unix")
 	" C'est c'est un système compatible UNIX, on
@@ -135,7 +135,7 @@ set autoread								"relecture automatique quand un fichier est changé par aill
 set scrolloff=5								" Toujours au moins 5 ligne au dessus du curseur
 set autoindent								" Auto indentation active
 set showmode								" Afficher le mode en cours
-set showcmd									" Afficher la dernière commande 
+set showcmd									" Afficher la dernière commande
 set hidden									" Fermer les bufers abandonnés
 set wildmenu								" Activer la complétion
 set wildmode=list:longest					" Option de complétion
@@ -143,7 +143,7 @@ set visualbell								" DU SILENCE, alerte visuelle uniquement
 set cursorline								" Afficher la ligne active
 set ttyfast									" Terminal rapide (lagacy)
 set ruler									" Afficher la position (lignes,colonne)
-set backspace=indent,eol,start				
+set backspace=indent,eol,start
 set laststatus=2							" Toujours afficher la ligne de statut
 
 set number
@@ -185,17 +185,17 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 " emmet settings:
 let g:user_emmet_settings = {
- \  'php' : {
-  \    'extends' : 'html',
-  \    'filters' : 'c',
-  \  },
-  \  'xml' : {
-  \    'extends' : 'html',
-  \  },
-  \  'haml' : {
-  \    'extends' : 'html',
-  \  },
-  \}
+			\  'php' : {
+			\    'extends' : 'html',
+			\    'filters' : 'c',
+			\  },
+			\  'xml' : {
+			\    'extends' : 'html',
+			\  },
+			\  'haml' : {
+			\    'extends' : 'html',
+			\  },
+			\}
 
 " gestion de la souris
 set mouse=a
