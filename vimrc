@@ -67,7 +67,7 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=Ubuntu_Mono_PNFT_Mono_Plus_Font:h10:cANSI
+	set guifont=UbuntuMonoDerivativePowerline_N:h12:cANSI
 elseif has("unix")
 	" cas linux
 	set guifont=UbuntuMonoDerivativePowerline\ Nerd\ Font\ 12
