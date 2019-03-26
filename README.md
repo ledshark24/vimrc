@@ -61,7 +61,7 @@ Usage
 ### Gestion des fichiers
 
 * `,cd` se rendre dans le dossier du fichier actif
-* `<Ctrl>-N` NerdTree
+* `<Ctrl>-N` Nerd Tree
 
 ### Recherche
 
@@ -78,3 +78,12 @@ Usage
 ### gestion des fenêtres
 
 * `,w` : nouveau partage vertical
+
+### Gestion des snippets :
+
+* `<Tab>` pour activer un snippet
+* `<c-Tab>` pour suggérer un snippet
+* `<c-j>` pour le composant suivant du snippet
+* `<c-k>` pour le composant prétendent du snippet
+
+par default les snippets sont stockés dans `~/UltiSnips/`

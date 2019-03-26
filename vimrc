@@ -238,6 +238,8 @@ endif
 let g:UltiSnipsExpandTrigger="<tab>"
 if has("win32")
 	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
+elseif has("unix")
+	let g:UltiSnipsSnippetDirectories=["~/UltiSnips"]
 endif
 
 " If you want :UltiSnipsEdit to split your window.
