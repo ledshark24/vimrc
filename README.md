@@ -50,6 +50,10 @@ Plugins :
 * [ctrlp](https://github.com/kien/ctrlp.vim) recherche par <C-p>
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter) signalétique du diff de git
   dans la colonne des lignes
+* [vim-snippets](https://github.com/honza/vim-snippets) vim-snippets
+* [UltiSnips](https://github.com/SirVer/ultisnips) UltiSnips
+* [Grammalecte](https://dpelle/vim-Grammalecte) Grammalecte : correction
+  grammaticale en français
 
 Usage
 -----
