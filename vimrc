@@ -84,8 +84,9 @@ let mapleader = ","
 
 " spellchek  -------------------------------------------------------------------
 
-set spell spelllang=fr
+set spell spelllang=fr,en_gb
 set spellsuggest=double,10
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " Appuyer sur ,ss lancera la correction orthographique
 map <leader>ss :setlocal spell!<cr>

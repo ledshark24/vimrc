@@ -70,6 +70,7 @@ Usage
 ### Correction orthographique
 
 * `,s?` suggestions
+* `<C-l>` appliquer la première suggestion à la dernière faute d'orthographe.
 * `,ss` Activation / désactivation de la Correction orthographique
 * `,sn`/`,sp` Suivant / Précédent
 * `,zg` Ajout au dictionnaire
