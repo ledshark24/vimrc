@@ -45,6 +45,9 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'dpelle/vim-Grammalecte'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -207,3 +210,38 @@ let g:airline#extensions#tabline#enabled = 1
 
 nnoremap <leader>cd :cd%:p:h<CR>
 map <C-n> :NERDTreeToggle<CR>
+
+" fix pour python sous windows :
+
+if has("win32")
+	let &pythonthreedll='C:\Users\amirault\AppData\Local\Programs\Python\Python36\python36.dll'
+endif
+
+
+" Grammalecte
+if has("win32")
+	let g:grammalecte_cli_py='C:/Users/amirault/scripts/gramalecte/grammalecte-cli.py'
+	let g:grammalecte_py_bin='python'
+	" cas de windows
+elseif has("unix")
+	" cas linux
+endif
+
+" meilleure intégration cli pour windows...
+
+if has("win32")
+""	set shell=c:\Program\ Files\Git\git-bash.exe
+endif
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+if has("win32")
+	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
+endif
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:snips_author = "Mathieu Amirault"
+let g:snips_email = "mathieu@lagilb.fr"
+let g:snips_github = "https://github.com/ledshark24"
+
