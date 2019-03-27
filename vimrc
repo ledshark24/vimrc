@@ -266,8 +266,12 @@ let g:syntastic_check_on_wq = 0
 "vimtex
 
 let g:tex_flavor='latex'
-let g:vimtex_view_method='general'
-"let g:vimtex_view_general_viewer = ("firefox.exe")
+"let g:vimtex_view_method='SumatraPDF'
+if has("win32")
+	let g:vimtex_view_general_viewer = fnameescape(expand("C:/Users/amirault/portables/SumatraPDF.exe"))
+elseif has("unix")
+	let g:vimtex_view_general_viewer = "SumatraPDF"
+endif
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
