@@ -48,6 +48,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'dpelle/vim-Grammalecte'
+Plugin 'lervag/vimtex'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -232,15 +233,17 @@ endif
 
 if has("win32")
 ""	set shell=c:\Program\ Files\Git\git-bash.exe
+	set noshellslash 
 endif
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-if has("win32")
-	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
-elseif has("unix")
-	let g:UltiSnipsSnippetDirectories=["~/UltiSnips"]
-endif
+let g:UltiSnipsSnippetDirectories=[fnameescape(expand(fnamemodify($MYVIMRC,":p:h").'/UltiSnips'))]
+" if has("win32")
+" 	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
+" elseif has("unix")
+" ""	let g:UltiSnipsSnippetDirectories=["~/UltiSnips"]
+" endif
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -248,3 +251,23 @@ let g:snips_author = "Mathieu Amirault"
 let g:snips_email = "mathieu@lagilb.fr"
 let g:snips_github = "https://github.com/ledshark24"
 
+"syntastic
+
+let g:syntactic_debug = 3
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"vimtex
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='general'
+"let g:vimtex_view_general_viewer = ("firefox.exe")
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
