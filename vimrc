@@ -238,6 +238,8 @@ endif
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 let g:UltiSnipsSnippetDirectories=[fnameescape(expand(fnamemodify($MYVIMRC,":p:h").'/UltiSnips'))]
 " if has("win32")
 " 	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
