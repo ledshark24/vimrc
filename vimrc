@@ -49,6 +49,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'dpelle/vim-Grammalecte'
 Plugin 'lervag/vimtex'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -238,8 +240,6 @@ endif
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 let g:UltiSnipsSnippetDirectories=[fnameescape(expand(fnamemodify($MYVIMRC,":p:h").'/UltiSnips'))]
 " if has("win32")
 " 	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
@@ -277,3 +277,13 @@ endif
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" pandoc
+let g:pandoc#biblio#sources="b"
+let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#compiler#arguments = "--toc"
+if has("win32")
+	let g:pandoc#command#pdf_engine = "SumatraPDF"
+	let g:pandoc#command#latex_engine= "pdflatex"
+"	let g:pandoc#command#latex_engine = "latexmk"
+endif

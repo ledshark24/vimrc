@@ -9,6 +9,7 @@ Prérequis:
 * installation des plugins : [Git](http://git-scm.com/)
 * Police utilisée : [UbuntuMono for powerline](https://github.com/ryanoasis/nerd-fonts/releases)
 * [Exuberant ctags 5.5](http://ctags.sourceforge.net/)
+* covnersion de format à format [pandoc](http://pandoc.corg) pandoc
 
 Installation
 ------------
@@ -53,6 +54,8 @@ Plugins :
 * [vim-snippets](https://github.com/honza/vim-snippets) vim-snippets
 * [UltiSnips](https://github.com/SirVer/ultisnips) UltiSnips
 * [Grammalecte](https://dpelle/vim-Grammalecte) Grammalecte : correction
+* [Vimtex](https://github.com/lervag/vimtex) Vimtex : outils pour le travail en LaTeX
+* [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc) et [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) intégration de [Pandoc](pandoc.org) et prise en charge de sa syntaxe
   grammaticale en français
 
 Usage
