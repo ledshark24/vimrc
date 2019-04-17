@@ -272,7 +272,7 @@ let g:tex_flavor='latex'
 if has("win32")
 	let g:vimtex_view_general_viewer = fnameescape(expand("C:/Users/amirault/portables/SumatraPDF.exe"))
 elseif has("unix")
-	let g:vimtex_view_general_viewer = "SumatraPDF"
+	let g:vimtex_view_general_viewer = "zathura"
 endif
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
