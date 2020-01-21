@@ -39,6 +39,7 @@ Plugin 'TaskList.vim'
 Plugin 'kien/rainbow_parentheses.vim'		" color-match ()[]{}<> and friends
 Plugin 'mattn/emmet-vim'					" implementation (expand tags shortcuts) html 'zen'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'roblillack/vim-bufferlist'
 Plugin 'scrooloose/syntastic'
 Plugin 'chrisbra/csv.vim'
@@ -51,6 +52,13 @@ Plugin 'dpelle/vim-Grammalecte'
 Plugin 'lervag/vimtex'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'dbeniamine/cheat.sh-vim'
+" Plugin 'posva/vim-vue'
+Plugin 'leafOfTree/vim-vue-plugin'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mfukar/robotframework-vim'
+Plugin 'aklt/plantuml-syntax'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -104,7 +112,7 @@ map <leader>s? z=
 set statusline=%<\ %n:%f\ %m%r%y%{fugitive#statusline()}%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 " auto complétion
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
 
 set modelines=0
 
@@ -144,8 +152,8 @@ set autoindent								" Auto indentation active
 set showmode								" Afficher le mode en cours
 set showcmd									" Afficher la dernière commande
 set hidden									" Fermer les bufers abandonnés
-set wildmenu								" Activer la complétion
-set wildmode=list:longest					" Option de complétion
+" set wildmenu								" Activer la complétion
+" set wildmode=list:longest					" Option de complétion
 set visualbell								" DU SILENCE, alerte visuelle uniquement
 set cursorline								" Afficher la ligne active
 set ttyfast									" Terminal rapide (lagacy)
@@ -223,6 +231,14 @@ endif
 
 
 " Grammalecte
+let g:grammalecte_disable_rules ='apostrophe_typographique apostrophe_typographique_après_t '
+  \ . 'espaces_début_ligne espaces_milieu_ligne espaces_fin_de_ligne '
+  \ . 'esp_début_ligne esp_milieu_ligne esp_fin_ligne esp_mélangés2 '
+  \ . 'typo_points_suspension1 typo_tiret_incise '
+  \ . 'nbsp_avant_double_ponctuation nbsp_avant_deux_points '
+  \ . 'nbsp_après_chevrons_ouvrants nbsp_avant_chevrons_fermants1 '
+  \ . 'unit_nbsp_avant_unités1 unit_nbsp_avant_unités2 '
+	\. 'typo_tiret_début_ligne typo_guillemets_typographiques_doubles_ouvrants typo_guillemets_typographiques_doubles_fermants '
 if has("win32")
 	let g:grammalecte_cli_py='C:/Users/amirault/scripts/gramalecte/grammalecte-cli.py'
 	let g:grammalecte_py_bin='python'
@@ -239,8 +255,17 @@ if has("win32")
 endif
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsSnippetDirectories=[fnameescape(expand(fnamemodify($MYVIMRC,":p:h").'/UltiSnips'))]
+" let g:UltiSnipsExpandTrigger="<tab>"
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 " if has("win32")
 " 	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
 " elseif has("unix")
@@ -281,9 +306,23 @@ let g:tex_conceal='abdmg'
 " pandoc
 let g:pandoc#biblio#sources="b"
 let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#compiler#arguments = "--toc"
+let g:pandoc#formating#mode = "A"
+if has("win32")
+	let g:pandoc#metadata = fnameescape(expand("C:/Users/amirault/vimfiles/pandoc.yaml"))
+endif
+if filereadable(g:pandoc#metadata)
+	let g:pandoc#compiler#arguments = "--toc --metadata-file=C:/Users/amirault/vimfiles/pandoc.yaml "
+else
+	let g:pandoc#compiler#arguments = "--toc -V toc-title=Sommaire"
+endif
 if has("win32")
 	let g:pandoc#command#pdf_engine = "SumatraPDF"
 	let g:pandoc#command#latex_engine= "pdflatex"
 "	let g:pandoc#command#latex_engine = "latexmk"
 endif
+
+"" plantuml
+if has("win32")
+	let g:plantuml_executable_script="C:/Users/amirault/bin/plantuml.sh"
+endif
+
