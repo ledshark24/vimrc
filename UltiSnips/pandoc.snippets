@@ -2,11 +2,20 @@ extends markdown
 # Personnel
 
 snippet @todo "todo"
-**à faire**
+**à faire$1** :$0
 endsnippet
 
+snippet @todov "todo"
+**à faire v$1** :$0
+endsnippet
+	
+
 snippet  @done "fait"
-**fait**
+**fait$1** :$0
+endsnippet
+
+snippet @new "Nouveau"
+** Nouveau **
 endsnippet
 
 snippet NTH "Nice To Have"
@@ -19,4 +28,14 @@ endsnippet
 
 snippet vlink "lien sur le visuel"
 [$1]($0${VISUAL})
+endsnippet
+
+snippet Versions "bloc de version"
+# Versions #
+
+| Version | Date                     | Auteur                                          | Commentaire |
+|:--------|:-------------------------|:------------------------------------------------|:------------|
+| 1       | `!v strftime("%A %d %B %Y")` | [Mathieu Amirault](mailto:mamirault@inafon.fr)  | $1            |
+
+$0
 endsnippet
