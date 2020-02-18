@@ -1,7 +1,7 @@
 " Gestion du cas (pénible) de windows
 if has("win32")
 	source $VIMRUNTIME/vimrc_example.vim	" vimrc par défaut
-"	source $VIMRUNTIME/mswin.vim			" options pour ne pas égarer l'utilisateur
+	"	source $VIMRUNTIME/mswin.vim			" options pour ne pas égarer l'utilisateur
 	set shellslash							" compatibilité mswin pour espace dans les noms de fichier
 	behave mswin
 elseif("unix")
@@ -18,11 +18,11 @@ if has("win32")
 	" cas de windows
 	set rtp+=~/vimfiles/bundle/Vundle.vim/
 	let path='~/vimfiles/bundle'
-call vundle#begin(path)
+	call vundle#begin(path)
 elseif has("unix")
 	" cas linux
 	set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+	call vundle#begin()
 endif
 
 
@@ -85,7 +85,7 @@ if has("win32")
 	set guifont=UbuntuMonoDerivativePowerline_N:h14:cANSI
 elseif has("unix")
 	" cas linux
-	set guifont=UbuntuMonoDerivativePowerline\ Nerd\ Font\ 14
+	set guifont=UbuntuMono\ 12
 endif
 
 set encoding=utf-8
@@ -251,7 +251,6 @@ endif
 " meilleure intégration cli pour windows...
 
 if has("win32")
-""	set shell=c:\Program\ Files\Git\git-bash.exe
 	set noshellslash
 endif
 
@@ -310,16 +309,18 @@ let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#formating#mode = "A"
 if has("win32")
 	let g:pandoc#metadata = fnameescape(expand("C:/Users/amirault/vimfiles/pandoc.yaml"))
+else
+	let g:pandoc#metadata = fnameescape(expand("~/.vim/pandoc.yaml"))
 endif
 if filereadable(g:pandoc#metadata)
-	let g:pandoc#compiler#arguments = "--toc --metadata-file=C:/Users/amirault/vimfiles/pandoc.yaml "
+	let g:pandoc#compiler#arguments = "--toc --metadata-file=".g:pandoc#metadata
 else
 	let g:pandoc#compiler#arguments = "--toc -V toc-title=Sommaire"
 endif
 if has("win32")
 	let g:pandoc#command#pdf_engine = "SumatraPDF"
 	let g:pandoc#command#latex_engine= "pdflatex"
-"	let g:pandoc#command#latex_engine = "latexmk"
+	"	let g:pandoc#command#latex_engine = "latexmk"
 endif
 
 "" plantuml
