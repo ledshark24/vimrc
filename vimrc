@@ -320,7 +320,6 @@ endif
 if has("win32")
 	let g:pandoc#command#pdf_engine = "SumatraPDF"
 	let g:pandoc#command#latex_engine= "pdflatex"
-	"	let g:pandoc#command#latex_engine = "latexmk"
 endif
 
 "" plantuml
