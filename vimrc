@@ -59,6 +59,7 @@ Plugin 'leafOfTree/vim-vue-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mfukar/robotframework-vim'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'ragon000/vim-latex-live-preview'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -81,10 +82,10 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=UbuntuMonoDerivativePowerline_N:h12:cANSI
+	set guifont=UbuntuMonoDerivativePowerline_N:h14:cANSI
 elseif has("unix")
 	" cas linux
-	set guifont=UbuntuMonoDerivativePowerline\ Nerd\ Font\ 12
+	set guifont=UbuntuMonoDerivativePowerline\ Nerd\ Font\ 14
 endif
 
 set encoding=utf-8
@@ -232,13 +233,13 @@ endif
 
 " Grammalecte
 let g:grammalecte_disable_rules ='apostrophe_typographique apostrophe_typographique_après_t '
-  \ . 'espaces_début_ligne espaces_milieu_ligne espaces_fin_de_ligne '
-  \ . 'esp_début_ligne esp_milieu_ligne esp_fin_ligne esp_mélangés2 '
-  \ . 'typo_points_suspension1 typo_tiret_incise '
-  \ . 'nbsp_avant_double_ponctuation nbsp_avant_deux_points '
-  \ . 'nbsp_après_chevrons_ouvrants nbsp_avant_chevrons_fermants1 '
-  \ . 'unit_nbsp_avant_unités1 unit_nbsp_avant_unités2 '
-	\. 'typo_tiret_début_ligne typo_guillemets_typographiques_doubles_ouvrants typo_guillemets_typographiques_doubles_fermants '
+			\ . 'espaces_début_ligne espaces_milieu_ligne espaces_fin_de_ligne '
+			\ . 'esp_début_ligne esp_milieu_ligne esp_fin_ligne esp_mélangés2 '
+			\ . 'typo_points_suspension1 typo_tiret_incise '
+			\ . 'nbsp_avant_double_ponctuation nbsp_avant_deux_points '
+			\ . 'nbsp_après_chevrons_ouvrants nbsp_avant_chevrons_fermants1 '
+			\ . 'unit_nbsp_avant_unités1 unit_nbsp_avant_unités2 '
+			\. 'typo_tiret_début_ligne typo_guillemets_typographiques_doubles_ouvrants typo_guillemets_typographiques_doubles_fermants '
 if has("win32")
 	let g:grammalecte_cli_py='C:/Users/amirault/scripts/gramalecte/grammalecte-cli.py'
 	let g:grammalecte_py_bin='python'
@@ -251,7 +252,7 @@ endif
 
 if has("win32")
 ""	set shell=c:\Program\ Files\Git\git-bash.exe
-	set noshellslash 
+	set noshellslash
 endif
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -326,3 +327,13 @@ if has("win32")
 	let g:plantuml_executable_script="C:/Users/amirault/bin/plantuml.sh"
 endif
 
+" YouCompleteMe
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.pandoc = ['@']
+
+let g:ycm_filetype_blacklist = {}
+
+" autosave des fichers
+autocmd CursorHold,CursorHoldI * update
