@@ -2,11 +2,11 @@ extends markdown
 # Personnel
 
 snippet @todo "todo"
-**à faire$1** :$0
+**à faire$1** : $0
 endsnippet
 
 snippet @todov "todo"
-**à faire v$1** :$0
+**à faire v$1** : $0
 endsnippet
 	
 
@@ -29,13 +29,14 @@ endsnippet
 snippet vlink "lien sur le visuel"
 [$1]($0${VISUAL})
 endsnippet
-
-snippet Versions "bloc de version"
+snippet Versions "tableau de versions"
 # Versions #
-
-| Version | Date                     | Auteur                                          | Commentaire |
-|:--------|:-------------------------|:------------------------------------------------|:------------|
-| 1       | `!v strftime("%A %d %B %Y")` | [Mathieu Amirault](mailto:mamirault@inafon.fr)  | $1            |
+| Version | Date `!p snip.rv = ' '*(len(t[2]) -len(' Date'))` | Auteur `!p snip.rv = ' '*(len(t[3]) -len('Auteur'))`| Commentaire`!p snip.rv = ' '*(len(t[4])+2 - len(' Commentaire '))` |
+`!p snip.rv = '|:' + '-' * (max((len(t[1]) +1) , len('Version '))) + '|:' + '-'*(len(t[2])+1) +'|:' + '-'*(len(t[3])+1) +'|:'+'-'*(max(len(' Commentaire'), len(t[4]) +1 ) -1 )+'-|'`
+| ${1:1}`!p snip.rv = ' ' * (max((len(t[1]) +1) , len('Version ')) -1) `| ${2:`!v strftime("%A %d %B %Y")`} | ${3:`!v g:snips_author`} | $4 `!p snip.rv = ' '*(len('Commentaire') - len(t[4]))`|
 
 $0
+endsnippet
+snippet 'mailto:(\w+) (\w+)' "mailto" r
+`!p snip.rv = "["+match.group(1)+" "+match.group(2)+"]("+match.group(1)[0]+match.group(2)+"@inafon.fr)"`
 endsnippet

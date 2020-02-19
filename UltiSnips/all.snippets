@@ -15,10 +15,13 @@ snippet Box "Boite sympatique"
 `!p snip.rv = '╚' + '═' * (len(t[1]) + 2) + '╝'`
 $0
 endsnippet
-snippet Moi "Moi même"
+snippet Moi "moi même"
 ${1:`!v g:snips_author`}
 endsnippet
 
 snippet today "Ajourd'hui"
 `!v strftime("%A %d %B %Y")`
+endsnippet
+snippet MA "moi même"
+${1:`!v g:snips_author`}
 endsnippet
