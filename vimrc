@@ -274,7 +274,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-let g:snips_author = "Mathieu Amirault"
+let g:snips_author = "Mathieu AMIRAULT"
 let g:snips_email = "mathieu@lagilb.fr"
 let g:snips_github = "https://github.com/ledshark24"
 
@@ -295,7 +295,7 @@ let g:syntastic_check_on_wq = 0
 let g:tex_flavor='latex'
 "let g:vimtex_view_method='SumatraPDF'
 if has("win32")
-	let g:vimtex_view_general_viewer = fnameescape(expand("C:/Users/amirault/portables/SumatraPDF.exe"))
+	let g:vimtex_view_general_viewer = "C:/Users/amirault/portables/SumatraPDF.exe"
 elseif has("unix")
 	let g:vimtex_view_general_viewer = "zathura"
 endif
@@ -308,9 +308,9 @@ let g:pandoc#biblio#sources="b"
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#formating#mode = "A"
 if has("win32")
-	let g:pandoc#metadata = fnameescape(expand("C:/Users/amirault/vimfiles/pandoc.yaml"))
+	let g:pandoc#metadata = "C:/Users/amirault/vimfiles/pandoc.yaml"
 else
-	let g:pandoc#metadata = fnameescape(expand("~/.vim/pandoc.yaml"))
+	let g:pandoc#metadata = "~/.vim/pandoc.yaml"
 endif
 if filereadable(g:pandoc#metadata)
 	let g:pandoc#compiler#arguments = "--toc --metadata-file=".g:pandoc#metadata
