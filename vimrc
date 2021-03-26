@@ -85,7 +85,7 @@ if has("win32")
 	set guifont=UbuntuMonoDerivativePowerline_N:h14:cANSI
 elseif has("unix")
 	" cas linux
-	set guifont=UbuntuMono\ 12
+	set guifont=UbuntuMono\ 16
 endif
 
 set encoding=utf-8
