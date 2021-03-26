@@ -5,3 +5,4 @@ bundle/*
 !bundle/Vundle.vim
 spell/*
 contacts.snippets
+black

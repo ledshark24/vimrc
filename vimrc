@@ -60,6 +60,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mfukar/robotframework-vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'ragon000/vim-latex-live-preview'
+Plugin 'psf/black'
+Plugin 'tmhedberg/simpylfold'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -329,7 +331,7 @@ endif
 
 " YouCompleteMe
 if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
+	let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers.pandoc = ['@']
 
