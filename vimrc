@@ -82,7 +82,7 @@ colorscheme desert
 
 if has("win32")
 	" cas windows
-	set guifont=UbuntuMonoDerivativePowerline_N:h14:cANSI
+	set guifont=UbuntuMono_NF:h14:cANSI
 elseif has("unix")
 	" cas linux
 	set guifont=UbuntuMono\ 12
@@ -227,7 +227,7 @@ map <C-n> :NERDTreeToggle<CR>
 " fix pour python sous windows :
 
 if has("win32")
-	let &pythonthreedll='C:\Users\amirault\AppData\Local\Programs\Python\Python36\python36.dll'
+	let &pythonthreedll='C:\Users\amirault\AppData\Local\Programs\Python\Python39\python39.dll'
 endif
 
 
