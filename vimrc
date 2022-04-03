@@ -74,6 +74,15 @@ if has("win32")
 	let g:tagbar_ctags_bin = 'C:\Program Files (x86)\ctags58\ctags.exe'
 endif
 
+" Mappings utiles --------------------------------------------------------------
+
+nmap U <C-r>
+imap kj <Esc> 
+nnoremap ; :
+nnoremap <leader>w <C-w>v<C-w>l
+
+" Unification du presse-papier
+"set clipboard=unnamedplus
 
 "Couleurs & polices ------------------------------------------------------------
 " syntaxe toujours à on
@@ -109,7 +118,7 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-"-----------------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 
 " statusline
 set statusline=%<\ %n:%f\ %m%r%y%{fugitive#statusline()}%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
@@ -124,7 +133,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-"Backup ------------------------------------------------------------------------------------------
+"Backup ------------------------------------------------------------------------
 set backup " backup on
 
 set history=100	" un historique raisonnable
@@ -155,8 +164,8 @@ set autoindent								" Auto indentation active
 set showmode								" Afficher le mode en cours
 set showcmd									" Afficher la dernière commande
 set hidden									" Fermer les bufers abandonnés
-" set wildmenu								" Activer la complétion
-" set wildmode=list:longest					" Option de complétion
+set wildmenu								" Activer la complétion
+set wildmode=list:longest					" Option de complétion
 set visualbell								" DU SILENCE, alerte visuelle uniquement
 set cursorline								" Afficher la ligne active
 set ttyfast									" Terminal rapide (lagacy)
@@ -197,23 +206,20 @@ highlight ColorColumn ctermbg=9
 set list!	"afficher les caractères invisibles
 set listchars=tab:›\ ,eol:¬,trail:∙	" quels caractères afficher
 
-nnoremap ; :
-
-nnoremap <leader>w <C-w>v<C-w>l
 
 " emmet settings:
 let g:user_emmet_settings = {
 			\  'php' : {
-			\    'extends' : 'html',
-			\    'filters' : 'c',
-			\  },
-			\  'xml' : {
-			\    'extends' : 'html',
-			\  },
-			\  'haml' : {
-			\    'extends' : 'html',
-			\  },
-			\}
+				\    'extends' : 'html',
+				\    'filters' : 'c',
+				\  },
+				\  'xml' : {
+					\    'extends' : 'html',
+					\  },
+					\  'haml' : {
+						\    'extends' : 'html',
+						\  },
+						\}
 
 " gestion de la souris
 set mouse=a
@@ -243,11 +249,12 @@ let g:grammalecte_disable_rules ='apostrophe_typographique apostrophe_typographi
 			\ . 'unit_nbsp_avant_unités1 unit_nbsp_avant_unités2 '
 			\. 'typo_tiret_début_ligne typo_guillemets_typographiques_doubles_ouvrants typo_guillemets_typographiques_doubles_fermants '
 if has("win32")
+	" cas de windows
 	let g:grammalecte_cli_py='C:/Users/amirault/scripts/gramalecte/grammalecte-cli.py'
 	let g:grammalecte_py_bin='python'
-	" cas de windows
 elseif has("unix")
 	" cas linux
+	let g:grammalecte_cli_py='~/gramalecte/grammalecte-cli.py'
 endif
 
 " meilleure intégration cli pour windows...
