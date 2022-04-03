@@ -76,6 +76,10 @@ endif
 
 " Mappings utiles --------------------------------------------------------------
 
+" leader est la virgule  -------------------------------------------------------
+
+let mapleader = ","
+
 nmap U <C-r>
 imap kj <Esc> 
 nnoremap ; :
@@ -101,9 +105,6 @@ endif
 
 set encoding=utf-8
 
-" leader est la virgule  -------------------------------------------------------
-
-let mapleader = ","
 
 " spellchek  -------------------------------------------------------------------
 
