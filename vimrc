@@ -61,6 +61,8 @@ Plugin 'mfukar/robotframework-vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'ragon000/vim-latex-live-preview'
 Plugin 'andviro/flake8-vim'
+Plugin 'psf/black'
+Plugin 'tmhedberg/simpylfold'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -87,7 +89,7 @@ if has("win32")
 	set guifont=UbuntuMono_NF:h14:cANSI
 elseif has("unix")
 	" cas linux
-	set guifont=UbuntuMono\ 12
+	set guifont=UbuntuMono\ 16
 endif
 
 set encoding=utf-8
