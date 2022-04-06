@@ -72,8 +72,7 @@ filetype plugin indent on					" requis
 "  Tagbar
 nmap <F8> :TagbarToggle<CR>
 if has("win32")
-	"let g:tagbar_ctags_bin = 'C:\Program Files (x86)\ctags58\ctags.exe'
-	let g:tagbar_ctags_bin = 'C:\Users\amirault\bin\ctags.exe'
+	let g:tagbar_ctags_bin = '$HOME\bin\ctags.exe'
 endif
 
 
@@ -231,7 +230,7 @@ map <C-n> :NERDTreeToggle<CR>
 " fix pour python sous windows :
 
 "if has("win32")
-	"let &pythonthreedll='C:\Users\amirault\AppData\Local\Programs\Python\Python39\python39.dll'
+	"let &pythonthreedll='$HOME\AppData\Local\Programs\Python\Python39\python39.dll'
 "endif
 
 
@@ -245,7 +244,7 @@ let g:grammalecte_disable_rules ='apostrophe_typographique apostrophe_typographi
 			\ . 'unit_nbsp_avant_unités1 unit_nbsp_avant_unités2 '
 			\. 'typo_tiret_début_ligne typo_guillemets_typographiques_doubles_ouvrants typo_guillemets_typographiques_doubles_fermants '
 if has("win32")
-	let g:grammalecte_cli_py='C:\Users\amirault\bin\grammalecte\grammalecte-cli.py'
+	let g:grammalecte_cli_py='$HOME\bin\grammalecte\grammalecte-cli.py'
 	let g:grammalecte_py_bin='python'
 	" cas de windows
 elseif has("unix")
@@ -270,12 +269,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-" if has("win32")
-" 	let g:UltiSnipsSnippetDirectories=["C:/Users/amirault/UltiSnips"]
-" elseif has("unix")
-" ""	let g:UltiSnipsSnippetDirectories=["~/UltiSnips"]
-" endif
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author = "Mathieu AMIRAULT"
@@ -299,7 +292,7 @@ let g:syntastic_check_on_wq = 0
 let g:tex_flavor='latex'
 "let g:vimtex_view_method='SumatraPDF'
 if has("win32")
-	let g:vimtex_view_general_viewer = "C:/Users/amirault/portables/SumatraPDF.exe"
+	let g:vimtex_view_general_viewer = "$HOME/portables/SumatraPDF.exe"
 elseif has("unix")
 	let g:vimtex_view_general_viewer = "zathura"
 endif
@@ -312,7 +305,7 @@ let g:pandoc#biblio#sources="b"
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#formating#mode = "A"
 if has("win32")
-	let g:pandoc#metadata = "C:/Users/amirault/vimfiles/pandoc.yaml"
+	let g:pandoc#metadata = "$HOME/vimfiles/pandoc.yaml"
 else
 	let g:pandoc#metadata = "~/.vim/pandoc.yaml"
 endif
@@ -328,7 +321,7 @@ endif
 
 "" plantuml
 if has("win32")
-	let g:plantuml_executable_script="C:/Users/amirault/bin/plantuml.sh"
+	let g:plantuml_executable_script="$HOME/bin/plantuml.sh"
 endif
 
 " YouCompleteMe
