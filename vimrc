@@ -60,6 +60,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mfukar/robotframework-vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'ragon000/vim-latex-live-preview'
+Plugin 'andviro/flake8-vim'
 Plugin 'ryanoasis/vim-devicons'				" -- à conserver à la fin
 
 call vundle#end()							" requis
@@ -69,7 +70,8 @@ filetype plugin indent on					" requis
 "  Tagbar
 nmap <F8> :TagbarToggle<CR>
 if has("win32")
-	let g:tagbar_ctags_bin = 'C:\Program Files (x86)\ctags58\ctags.exe'
+	"let g:tagbar_ctags_bin = 'C:\Program Files (x86)\ctags58\ctags.exe'
+	let g:tagbar_ctags_bin = 'C:\Users\amirault\bin\ctags.exe'
 endif
 
 
@@ -202,16 +204,16 @@ nnoremap <leader>w <C-w>v<C-w>l
 " emmet settings:
 let g:user_emmet_settings = {
 			\  'php' : {
-			\    'extends' : 'html',
-			\    'filters' : 'c',
-			\  },
-			\  'xml' : {
-			\    'extends' : 'html',
-			\  },
-			\  'haml' : {
-			\    'extends' : 'html',
-			\  },
-			\}
+				\    'extends' : 'html',
+				\    'filters' : 'c',
+				\  },
+				\  'xml' : {
+					\    'extends' : 'html',
+					\  },
+					\  'haml' : {
+						\    'extends' : 'html',
+						\  },
+						\}
 
 " gestion de la souris
 set mouse=a
@@ -226,9 +228,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 " fix pour python sous windows :
 
-if has("win32")
-	let &pythonthreedll='C:\Users\amirault\AppData\Local\Programs\Python\Python39\python39.dll'
-endif
+"if has("win32")
+	"let &pythonthreedll='C:\Users\amirault\AppData\Local\Programs\Python\Python39\python39.dll'
+"endif
 
 
 " Grammalecte
@@ -241,7 +243,7 @@ let g:grammalecte_disable_rules ='apostrophe_typographique apostrophe_typographi
 			\ . 'unit_nbsp_avant_unités1 unit_nbsp_avant_unités2 '
 			\. 'typo_tiret_début_ligne typo_guillemets_typographiques_doubles_ouvrants typo_guillemets_typographiques_doubles_fermants '
 if has("win32")
-	let g:grammalecte_cli_py='C:/Users/amirault/scripts/gramalecte/grammalecte-cli.py'
+	let g:grammalecte_cli_py='C:\Users\amirault\bin\grammalecte\grammalecte-cli.py'
 	let g:grammalecte_py_bin='python'
 	" cas de windows
 elseif has("unix")
@@ -329,7 +331,7 @@ endif
 
 " YouCompleteMe
 if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
+	let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers.pandoc = ['@']
 
