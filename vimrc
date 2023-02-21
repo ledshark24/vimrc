@@ -8,6 +8,12 @@ elseif("unix")
 	runtime! debian.vim						" vimrc par défaut
 endif
 
+" dll python
+if has("win32")
+	 "cas de windows
+	set pythonthreedll=c:\\users\\amirault\\.pyenv\\pyenv-win\versions\\3.9.6\\python39.dll
+	set pythonthreehome=c:\\users\\amirault\\.pyenv\\pyenv-win\versions\\3.9.6\\
+endif
 "Vundle : gestion des plug-ins--------------------------------------------------
 
 set nocompatible							" be iMproved, required
@@ -227,13 +233,6 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <leader>cd :cd%:p:h<CR>
 map <C-n> :NERDTreeToggle<CR>
 
-" fix pour python sous windows :
-
-"if has("win32")
-	"let &pythonthreedll='$HOME\AppData\Local\Programs\Python\Python39\python39.dll'
-"endif
-
-
 " Grammalecte
 let g:grammalecte_disable_rules ='apostrophe_typographique apostrophe_typographique_après_t '
 			\ . 'espaces_début_ligne espaces_milieu_ligne espaces_fin_de_ligne '
@@ -334,3 +333,4 @@ let g:ycm_filetype_blacklist = {}
 
 " autosave des fichers
 autocmd CursorHold,CursorHoldI * update
+
