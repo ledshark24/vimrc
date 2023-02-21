@@ -11,8 +11,8 @@ endif
 " dll python
 if has("win32")
 	 "cas de windows
-	set pythonthreedll=c:\\users\\amirault\\.pyenv\\pyenv-win\versions\\3.9.6\\python39.dll
-	set pythonthreehome=c:\\users\\amirault\\.pyenv\\pyenv-win\versions\\3.9.6\\
+	set pythonthreedll=$HOME\\.pyenv\\pyenv-win\versions\\3.9.6\\python39.dll
+	set pythonthreehome=$HOME\\.pyenv\\pyenv-win\versions\\3.9.6\\
 endif
 "Vundle : gestion des plug-ins--------------------------------------------------
 
