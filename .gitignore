@@ -6,3 +6,6 @@ bundle/*
 spell/*
 contacts.snippets
 black
+backupdir/*
+directory/*
+undodir/*

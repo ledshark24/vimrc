@@ -140,19 +140,38 @@ set undolevels=150
 " Suffixes à cacher
 set suffixes=.jpg,.png,.jpeg,.gif,.bak,~,.swp,.swo,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyo,*~
 
-if filewritable(expand("~/.vim/backup")) == 2
-	" comme le répertoire est accessible en écriture,
-	" on va l'utiliser.
-	set backupdir=$HOME/.vim/backup
+if filewritable(expand("~/.vim/backupdir")) == 2
+	set backupdir=$HOME/.vim/backupdir//
 elseif has("unix") || has("win32unix")
-	" C'est c'est un système compatible UNIX, on
-	" va créer le répertoire et l'utiliser.
-	call system("mkdir $HOME/.vim/backup -p")
-	set backupdir=$HOME/.vim/backup
+	call system("mkdir $HOME/.vim/backupdir -p")
+	set backupdir=$HOME/.vim/backupdir//
 elseif has("win32")
-	" cas windows sans la structure qui va bien		TODO
-	set backupdir=c:\tmp,c:\temp,~\AppData\Local\Temp
-	set directory=c:\tmp,c:\temp,~\AppData\Local\Temp
+	if filewritable(expand('$HOME\vimfiles\backupdir')) == 2
+		set backupdir=$HOME\vimfiles\backupdir//
+	endif
+	set directory=$HOME\vimfiles\directory//
+	set undodir=$HOME\vimfiles\undo//
+endif
+if filewritable(expand("~/.vim/directory")) == 2
+	set directory=$HOME/.vim/directory//
+elseif has("unix") || has("win32unix")
+	call system("mkdir $HOME/.vim/directory -p")
+	set directory=$HOME/.vim/directory//
+elseif has("win32")
+	if filewritable(expand('$HOME\vimfiles\directory')) == 2
+		set directory=$HOME\vimfiles\directory//
+	endif
+endif
+
+if filewritable(expand("~/.vim/undodir")) == 2
+	set undodir=$HOME/.vim/undodir//
+elseif has("unix") || has("win32unix")
+	call system("mkdir $HOME/.vim/undodir -p")
+	set undodir=$HOME/.vim/undodir//
+elseif has("win32")
+	if filewritable(expand('$HOME\vimfiles\undodir')) == 2
+		set undodir=$HOME\vimfiles\undodir//
+	endif
 endif
 
 set autoread								"relecture automatique quand un fichier est changé par ailleurs
@@ -333,4 +352,3 @@ let g:ycm_filetype_blacklist = {}
 
 " autosave des fichers
 autocmd CursorHold,CursorHoldI * update
-
