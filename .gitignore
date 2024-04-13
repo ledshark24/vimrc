@@ -6,3 +6,4 @@ bundle/*
 spell/*
 contacts.snippets
 black
+undodir/%home%led%dotfiles%.git%modules%.vim%config
